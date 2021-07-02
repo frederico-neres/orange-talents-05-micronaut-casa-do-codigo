@@ -8,7 +8,7 @@ import javax.validation.Valid
 
 @Validated
 @Controller("/api/autores")
-class CadastrarAutorController(val autorRepository: AutorRepository) {
+class CadastrarAutorController(private val autorRepository: AutorRepository) {
 
     @Post
     fun cadastrar(@Body @Valid request: NovoAutorRequest){
