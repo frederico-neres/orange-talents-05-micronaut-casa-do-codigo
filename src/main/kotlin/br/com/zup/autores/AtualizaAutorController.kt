@@ -7,6 +7,7 @@ import io.micronaut.http.annotation.Controller
 import io.micronaut.http.annotation.Patch
 import io.micronaut.http.annotation.PathVariable
 import io.micronaut.validation.Validated
+import javax.transaction.Transactional
 import javax.validation.Valid
 import javax.validation.constraints.NotBlank
 
@@ -15,6 +16,7 @@ import javax.validation.constraints.NotBlank
 class AtualizaAutorController(private val autorRepository: AutorRepository) {
 
     @Patch
+    @Transactional
     fun atualiza(
         @PathVariable id: Long,
         @Body @Valid atualizarAutorDescricaoRequest: AtualizarAutorDescricaoRequest
@@ -25,7 +27,6 @@ class AtualizaAutorController(private val autorRepository: AutorRepository) {
 
         val autor = optionalAutor.get()
         autor.descricao = atualizarAutorDescricaoRequest.descricao
-        autorRepository.update(autor)
 
         return HttpResponse.ok(AutorResponse(autor))
     }

@@ -48,7 +48,9 @@ dependencies {
 
 }
 
-
+allOpen {
+    annotation("io.micronaut.http.annotation.Controller")
+}
 
 
 application {
