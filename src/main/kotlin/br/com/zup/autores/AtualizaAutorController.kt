@@ -21,7 +21,7 @@ class AtualizaAutorController(private val autorRepository: AutorRepository) {
     ): HttpResponse<Any>{
 
         val optionalAutor = autorRepository.findById(id)
-        if(optionalAutor.isEmpty) return HttpResponse.badRequest()
+        if(optionalAutor.isEmpty) return HttpResponse.notFound()
 
         val autor = optionalAutor.get()
         autor.descricao = atualizarAutorDescricaoRequest.descricao

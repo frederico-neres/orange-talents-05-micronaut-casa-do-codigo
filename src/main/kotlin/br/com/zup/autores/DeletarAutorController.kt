@@ -11,7 +11,7 @@ class DeletarAutorController(private val autorRepository: AutorRepository) {
     @Delete
     fun deletar(@PathVariable id: Long): HttpResponse<Any> {
         val existsById = autorRepository.existsById(id)
-        if(!existsById) return HttpResponse.badRequest()
+        if(!existsById) return HttpResponse.notFound()
 
         autorRepository.deleteById(id)
         return HttpResponse.ok()
