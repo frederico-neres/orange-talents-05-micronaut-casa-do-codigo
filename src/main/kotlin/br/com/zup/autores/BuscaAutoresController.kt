@@ -32,4 +32,11 @@ class AutorResponse(autor: Autor) {
     val nome = autor.nome
     val email = autor.email
     val descricao = autor.descricao
+    val logradouro = autor.endereco.logradouro
+    val complemento = autor.endereco.complemento
+    val bairro = autor.endereco.bairro
+    val localidade = autor.endereco.localidade
+    val uf = autor.endereco.uf
+    val numero = autor.endereco.numero
+    val cep = autor.endereco.cep
 }
