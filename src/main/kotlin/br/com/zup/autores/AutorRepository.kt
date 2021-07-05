@@ -10,4 +10,6 @@ interface AutorRepository : JpaRepository<Autor, Long> {
 
     @Query("SELECT a FROM Autor a WHERE a.email = :email")
     fun buscaPorAutor(email: String): Optional<Autor>
+
+    fun existsByEmail(email: String): Boolean
 }

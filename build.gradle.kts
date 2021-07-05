@@ -38,6 +38,8 @@ dependencies {
     runtimeOnly("ch.qos.logback:logback-classic")
     runtimeOnly("com.h2database:h2")
     implementation("io.micronaut:micronaut-validation")
+    implementation("io.micronaut.beanvalidation:micronaut-hibernate-validator")
+    implementation("io.micronaut.xml:micronaut-jackson-xml")
 
     runtimeOnly("mysql:mysql-connector-java")
     testImplementation("org.testcontainers:junit-jupiter")

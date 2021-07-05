@@ -6,6 +6,7 @@ import javax.persistence.*
 @Entity
 class Autor(
     val nome: String,
+    val cpf: String,
     val email: String,
     var descricao: String,
     @Embedded val endereco: Endereco,
