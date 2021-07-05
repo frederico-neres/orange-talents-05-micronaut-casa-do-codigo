@@ -45,7 +45,7 @@ dependencies {
     testImplementation("org.testcontainers:junit-jupiter")
     testImplementation("org.testcontainers:mysql")
     testImplementation("org.testcontainers:testcontainers")
-
+    testAnnotationProcessor("io.micronaut:micronaut-inject-java")
     runtimeOnly("com.fasterxml.jackson.module:jackson-module-kotlin")
 
 }
