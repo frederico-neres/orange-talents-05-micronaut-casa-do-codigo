@@ -30,7 +30,7 @@ internal class BuscaAutoresControllerTest {
             nome = "Fred",
             cpf = "375.821.440-82", // cpf fake
             email = "fred@email.com", // email fake
-            descricao = "Desenvolvedor Pleno Java|Spring|Kotlin|Micronaut",
+            descricao = "Desenvolvedor Pleno Java|Spring|Kotlin|Micronaut"
         )
 
         autorRepository.save(autor)

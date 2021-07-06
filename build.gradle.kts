@@ -43,9 +43,12 @@ dependencies {
 
     runtimeOnly("mysql:mysql-connector-java")
     testImplementation("org.testcontainers:junit-jupiter")
+    testImplementation("org.mockito:mockito-core")
+    testImplementation("io.micronaut.test:micronaut-test-junit5:2.3.7")
     testImplementation("org.testcontainers:mysql")
     testImplementation("org.testcontainers:testcontainers")
     testAnnotationProcessor("io.micronaut:micronaut-inject-java")
+    testImplementation("com.h2database:h2")
     runtimeOnly("com.fasterxml.jackson.module:jackson-module-kotlin")
 
 }
