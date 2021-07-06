@@ -38,12 +38,35 @@ class BuscaAutoresController(private val autorRepository: AutorRepository) {
     }
 }
 
-class AutorResponse(autor: Autor) {
-    val id = autor.id
-    val nome = autor.nome
-    val cpf = autor.cpf
-    val email = autor.email
-    val descricao = autor.descricao
+data class AutorResponse(
+    val id: Long,
+    val nome: String,
+    val cpf: String,
+    val email: String,
+    val descricao: String,
+    val logradouro: String,
+    val complemento: String,
+    val bairro: String,
+    val localidade: String,
+    val uf: String,
+    val numero: String,
+    val cep: String
+) {
+    constructor(autor: Autor): this(
+            id = autor.id!!,
+            nome = autor.nome,
+            cpf = autor.cpf,
+            email = autor.email,
+            descricao = autor.descricao,
+            logradouro = autor.endereco.logradouro,
+            complemento = autor.endereco.complemento,
+            bairro = autor.endereco.bairro,
+            localidade = autor.endereco.localidade,
+            uf = autor.endereco.uf,
+            numero = autor.endereco.numero,
+            cep = autor.endereco.cep,
+    )
 }
+
 
 

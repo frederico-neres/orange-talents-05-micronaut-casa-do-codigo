@@ -1,6 +1,5 @@
 package br.com.zup.autores
 
-import com.fasterxml.jackson.annotation.JsonIgnore
 import java.time.LocalDateTime
 import javax.persistence.*
 
@@ -10,7 +9,7 @@ class Autor(
     val cpf: String,
     val email: String,
     var descricao: String,
-//    @Embedded val endereco: Endereco,
+    @Embedded val endereco: Endereco,
 ) {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

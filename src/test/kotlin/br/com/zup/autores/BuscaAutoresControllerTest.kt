@@ -26,11 +26,22 @@ internal class BuscaAutoresControllerTest {
 
     @BeforeEach
     internal fun setUp() {
+        val endereco = Endereco(
+            logradouro = "Rua Antônio Meras Sagas",
+            complemento = "casa",
+            bairro = "Vila Nova",
+            localidade = "Joinville",
+            uf = "SC",
+            numero = "3",
+            cep = "89237-452"
+        )
+
         autor = Autor(
             nome = "Fred",
             cpf = "375.821.440-82", // cpf fake
             email = "fred@email.com", // email fake
-            descricao = "Desenvolvedor Pleno Java|Spring|Kotlin|Micronaut"
+            descricao = "Desenvolvedor Pleno Java|Spring|Kotlin|Micronaut",
+            endereco = endereco
         )
 
         autorRepository.save(autor)
